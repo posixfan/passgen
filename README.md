@@ -9,11 +9,11 @@ configuration of length and quantity.
 
 ## ✨ Features
 
--   Cryptographically secure password generation\
--   Customizable password length\
--   Ability to generate multiple passwords\
--   First character is always a letter or digit\
--   Uses full printable ASCII set\
+-   Cryptographically secure password generation
+-   Customizable password length
+-   Ability to generate multiple passwords
+-   First character is always a letter or digit
+-   Uses full printable ASCII set
 -   Convenient help menu (`-h`)
 
 ------------------------------------------------------------------------
@@ -22,41 +22,41 @@ configuration of length and quantity.
 
 ### Basic run
 
-    passgen
+    pgen
 
 Generates a single **14‑character** password.
 
 ### Set a custom length
 
-    passgen <length>
+    pgen <length>
 
 Example:
 
-    passgen 16
+    pgen 16
 
 ### Generate multiple passwords
 
-    passgen <length> <count>
+    pgen <length> <count>
 
 Example:
 
-    passgen 12 5
+    pgen 12 5
 
 ------------------------------------------------------------------------
 
 ## 📌 Restrictions
 
--   Minimum length: **8 characters**\
+-   Minimum length: **8 characters**
 -   All errors are properly handled and shown in the console
 
 ------------------------------------------------------------------------
 
 ## 🆘 Help
 
-    passgen -h
+    pgen -h
 
-Displays: - syntax\
-- examples\
+Displays: - syntax
+- examples
 - explanations of arguments
 
 ------------------------------------------------------------------------
@@ -65,15 +65,15 @@ Displays: - syntax\
 
 The generator uses:
 
--   **Letters**: `a-zA-Z`\
+-   **Letters**: `a-zA-Z`
 
--   **Digits**: `0-9`\
+-   **Digits**: `0-9`
 
 -   **ASCII punctuation**:
 
         !"#$%&'()*+,-./:;<=>?@[\]^_`{|}~
 
-The first character is selected only from:\
+The first character is selected only from:
 `a-zA-Z0-9`
 
 ------------------------------------------------------------------------
@@ -92,9 +92,9 @@ Characters are selected through a secure helper:
 secureRandomChoice()
 ```
 
-The program includes: - secure integer generation\
-- password construction\
-- CLI argument parsing\
+The program includes: - secure integer generation
+- password construction
+- CLI argument parsing
 - error and help output
 
 ------------------------------------------------------------------------
@@ -109,10 +109,10 @@ The program includes: - secure integer generation\
 
 ## 📚 Build
 
-    go build -o passgen
+    go build -o pgen
 
 ------------------------------------------------------------------------
 
 ## 📥 Run
 
-    ./passgen 20 3
+    ./pgen 20 3

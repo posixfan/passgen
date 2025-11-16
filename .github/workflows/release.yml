@@ -10,30 +10,41 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # Проверяем код
+      # Проверка кода
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      # Устанавливаем Go
+      # Установка Go
       - name: Set up Go
         uses: actions/setup-go@v5
         with:
           go-version: "1.22"
 
-      # Собираем Linux amd64
+      # Опционально: кеш зависимостей, если появятся go.mod/go.sum
+      - name: Cache Go modules
+        uses: actions/cache@v3
+        with:
+          path: |
+            ~/.cache/go-build
+            ~/go/pkg/mod
+          key: ${{ runner.os }}-go-${{ hashFiles('**/go.sum') }}
+          restore-keys: |
+            ${{ runner.os }}-go-
+
+      # Сборка Linux (amd64)
       - name: Build Linux (amd64)
         run: GOOS=linux GOARCH=amd64 go build -o pgen-linux-amd64
 
-      # Собираем Windows amd64
+      # Сборка Windows (amd64)
       - name: Build Windows (amd64)
         run: GOOS=windows GOARCH=amd64 go build -o pgen-windows-amd64.exe
 
-      # Собираем macOS Apple Silicon
-      - name: Build MacOS (Apple Silicon)
+      # Сборка macOS Apple Silicon (arm64)
+      - name: Build macOS (Apple Silicon)
         run: GOOS=darwin GOARCH=arm64 go build -o pgen-darwin-arm64
 
-      # Загружаем бинарники в релиз
-      - name: Upload binaries to GitHub Release
+      # Загрузка бинарников в GitHub Release
+      - name: Upload binaries to Release
         uses: softprops/action-gh-release@v2
         with:
           files: |

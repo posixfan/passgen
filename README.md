@@ -93,5 +93,5 @@ https://github.com/posixfan/passgen
 
 ## License
 
-MIT License\
+GPL-3.0 License\
 Copyright (c) Andrew Razuvaev

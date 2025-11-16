@@ -1,11 +1,11 @@
 # Cryptographic Password Generator (`pgen`)
 
-A simple and secure console-based password generator written in Go.
+A simple and secure console-based password generator written in Go.\
 It uses cryptographically strong randomness (`crypto/rand`) and supports
 flexible command‑line options.
 
-Author: **Andrew Razuvaev**
-GitHub: https://github.com/posixfan
+Author: **Andrew Razuvaev**\
+GitHub: https://github.com/posixfan \
 Email: posixfan87@yandex.ru
 
 ------------------------------------------------------------------------
@@ -13,7 +13,7 @@ Email: posixfan87@yandex.ru
 ## Features
 
 -   Generates strong, random passwords using cryptographically secure
-    RNG
+    RNG 
 -   Supports configurable password length
 -   Can generate multiple passwords in a single run
 -   Optional flag to exclude punctuation characters
@@ -93,5 +93,5 @@ https://github.com/posixfan/passgen
 
 ## License
 
-GPL-3.0 License
+MIT License\
 Copyright (c) Andrew Razuvaev
